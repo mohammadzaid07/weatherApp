@@ -11,8 +11,11 @@ url = f"https://api.weatherapi.com/v1/current.json?key=88d26221360d42cdbfe210332
 r = requests.get(url)
 
 weatherdic = json.loads(r.text)
+print(weatherdic)
 temp = weatherdic["current"]["temp_c"]
+humidity = weatherdic["current"]["humidity"]
 print(temp)
+print(humidity)
 
 text = "Python text-to-speech test. using win32com.client"
-speak.Speak(f"The temperature of city {city} is {temp} degree celcius")
+speak.Speak(f"The temperature of city {city} is {temp} degree celcius and humidity is {humidity} grams of water vapour per cubic meter of air")
